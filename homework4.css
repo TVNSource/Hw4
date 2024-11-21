@@ -1,0 +1,240 @@
+
+/*
+    Name: Thinh Nguyen
+    Name of file: homework4.css
+    Date created: 08/26/2024
+    Date last edited: 11/07/2024
+    Version: 12
+    Description: Assignment 4 stylesheet
+*/
+
+/* Resize image*/
+img {
+  width: 70%;  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #C1D8C3;
+}
+
+
+/* Banner section */
+.header {
+  padding: 12px;  
+  text-align: center; 
+  background: #674636;
+  color: #FFF8E8;  
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;   
+}
+/* use another font for Banner */
+.header h1 {
+  font-size: 38px;
+  font-family: Verdana;
+}
+
+.card {
+  background-color:white;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;   
+}
+
+/* Footer section */
+.footer {
+  padding: 5px;
+  text-align: center;
+  background: #674636;
+  margin-top: 20px;
+  color:white;
+  width:80%;  
+  margin-left:auto;
+  margin-right:auto; 
+}
+
+/* to display error or valid message */
+.errorMsg{
+	color:red;	
+}
+
+.validMsg{
+	color:green;
+	
+}
+
+/*Table design */
+#myForm .label-cell {
+    text-align: right;
+    padding: 10px;
+	width:25%;
+}
+
+
+#myForm {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#myForm td, #myForm th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*alternate color row */
+#myForm tr:nth-child(even){background-color: #f2f2f2;}
+
+#myForm tr:hover {background-color: #C1D8C3;}
+
+#myForm th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 1.5em;
+  background-color: #674636;
+  color: white;
+}
+
+input[type="text"],input[type="password"], input[type="email"],input[type="date"], select {
+    width: 200px;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea{
+	width: 340px;
+	height: 75px;
+	padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	
+}
+
+/* Button */
+input[type="submit"], input[type="reset"],input[type="button"]  {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover  {
+    background-color: #674636; 
+}
+
+input[type="submit"]:disabled {
+   opacity: 0.6;
+   cursor: not-allowed;
+}
+
+/* Unvisited link */
+a:link {
+  color: #FFF8E8;
+}
+
+/* Visited link */
+a:visited {
+  color: #bdda81;
+}
+
+/* Mouse over link */
+a:hover {
+  color: #AAB396;
+}
+
+/* Selected link */
+a:active {
+  color: #F7EED3;
+}
+
+#healthBar{
+	width:60%;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal styles */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Review form table */
+#reviewForm {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#reviewForm td, #reviewForm th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#reviewForm th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 1.5em;
+  background-color: #674636;
+  color: white;
+  margin-bottom:100px;
+}
+
+
+.button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.button:hover  {
+    background-color: #674636; 
+}
