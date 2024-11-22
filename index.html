@@ -346,9 +346,14 @@ Description: Assignment 4
                   
                   <tr>
                         <td class="label-cell">
-                           <label>How good is your health <br>( 1 to 10)?</label>
+                           <label>How good is your health?</label> <br>
+						   <img style="max-width: 64px; height: auto;cursor: pointer;"  
+								src="play.gif" 
+								alt="Click to play Help Video" 
+								onclick="showVideo()" >
+						
                         </td>
-                        <td class="input-cell">  <p> Slide the bar to select </p>
+                        <td class="input-cell">  <p> Slide the bar to select 1 to 10 </p>
                             1 &nbsp;<input type="range" 
                                     min="1" 
                                     max="10" 
@@ -478,13 +483,29 @@ Description: Assignment 4
 			<span id="content"></span>
 		  </div>
 		</div>
+		
+		<!-- Video Modal -->
+		<div id="healthVideoModal" class="modal">			
+			<div class="modal-content-video">
+				<span class="closeVideo">&times;</span>								
+								
+								<iframe width="560" 
+										height="315" 
+										src="https://www.youtube.com/embed/-55rYdxSOSQ?si=og1djh2uUAmJURlT" 
+										title="YouTube video player" 
+										frameborder="0"  
+										allowfullscreen>
+								</iframe>
+			</div>
+		</div>
+		
 		 
          <!-- Footer section -->
          <div class="footer">            
-               <p> &copy; MIS Health Hospital: 4250 Martin Luther King Blvd, Houston, TX 77204 </p>
-               &#9742; <a href="homework4-about.html">CONTACT US </a>
+               <p> &copy; MIS Health Hospital &ensp;&#9733; &ensp;Houston, TX 77204 &ensp; &#9733;&ensp; <a href="homework4-about.html">About Us </a> </p>               
          </div>       
-        
+        	
+
          <!-- Load external JavaScript -->
          <script src="homework4.js"></script>     
     </body>

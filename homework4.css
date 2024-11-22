@@ -23,7 +23,6 @@ body {
   background: #C1D8C3;
 }
 
-
 /* Banner section */
 .header {
   padding: 12px;  
@@ -51,7 +50,7 @@ body {
 
 /* Footer section */
 .footer {
-  padding: 5px;
+  padding: 1px;
   text-align: center;
   background: #674636;
   margin-top: 20px;
@@ -59,6 +58,8 @@ body {
   width:80%;  
   margin-left:auto;
   margin-right:auto; 
+  bottom: 0;   /* to always show footer */
+  position: sticky; 
 }
 
 /* to display error or valid message */
@@ -237,4 +238,32 @@ a:active {
 }
 .button:hover  {
     background-color: #674636; 
+}
+
+
+
+
+
+
+
+.modal-content-video {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  align:center;
+}
+.closeVideo {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeVideo:hover,
+.closeVideo:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

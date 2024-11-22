@@ -474,8 +474,26 @@ function validateInput(){
 	
 }
  
- 
 
+//MODAL HEALTH POP UP 
+let modalHealth = document.getElementById("healthVideoModal");
+
+// Get the <span> element that closes the modal
+let spanVideo = document.getElementsByClassName("closeVideo")[0];
+	spanVideo.onclick = function() {		
+							modalHealth.style.display = "none";
+						}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalHealth) {
+    modalHealth.style.display = "none";
+  }
+} 
+
+function showVideo() {
+	  modalHealth.style.display = "block";
+}
  
  
 
