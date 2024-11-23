@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  alert("in getCookie");
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  alert("my decodeCOokie " + decodedCookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+
+function manageCookies()
+{
+	alert("manageCookies 222called");
+	let fname = document.getElementById("FirstName").value;	
+	const rememberMe = document.getElementById("rememberMe").checked;
+	alert("first name is "+ fname + "  Checked value is " + rememberMe);
+	if (rememberMe) {
+			setCookie("fname2", fname, 48); 
+			alert("Cookies saved");
+	} else {
+			deleteCookie("fname2"); // Clear cookie if not remembered
+			alert("Cookies delete");
+	}
+	
+	var cName = getCookie("fname2");
+	alert ("cookies name = " + cName);	
+} 
+</script>
+</head>
+
+<body>
+  <input type="checkbox" id="rememberMe" name="rememberMe" checked>
+  <input type="text" id="FirstName">
+   <button type="button" onclick="manageCookies()">TestCookies</button>
+</body>
+
+</html>

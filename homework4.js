@@ -9,7 +9,6 @@
  //display Today Date on screen
  document.getElementById("today").innerHTML = 'Today date is: '+new Date().toLocaleDateString();
  
- 
  //code for slider
  let slider = document.getElementById("healthBar");
  let output = document.getElementById("healthBarVal");
@@ -451,8 +450,14 @@ function checkEmail() {
 }
 
 function validateInput(){
+	
+	
 	error_flag = 0;
 	checkFirstName();	
+	//test only 
+	//manageCookies();
+	//end test
+	
 	checkMidName();
 	checkLastName();
 	checkDate();
@@ -468,12 +473,16 @@ function validateInput(){
 	
 	if (error_flag != "1"){		
 		document.getElementById("btnSubmit").disabled = false;
+		//no error, create or delete cookies depends on Remember Me checkbox value	
+		//manageCookies();
+		
+		
 	} else {
 		alert("Please correct the error(s) on page to continue.");
-	}
-	
+	}	
 }
  
+
 
 //MODAL HEALTH POP UP 
 let modalHealth = document.getElementById("healthVideoModal");
@@ -496,6 +505,72 @@ function showVideo() {
 }
  
  
+//display User from cookies
+function displayNameOnHeader() {
+		const cName = getCookie("fname");
+		alert ("cookies name is " + cName);
+	    const headerUser = document.getElementById("headerUser");
+   // const dynamicCheckbox = document.getElementById("dynamicCheckbox");
+    
+    if (cName != "") {
+        headerUser.innerHTML = `Welcome back, ${firstName}!`;
+        //create dynamic checkbox
+		//if (!dynamicCheckbox) {
+        //    createDynamicCheckbox(cName);
+        //}
+    } else {
+        headerUser.innerHTML = "Welcome New User!";
+        //if (dynamicCheckbox) {
+        //    dynamicCheckbox.remove();
+        //}
+    }
+}
 
+// Set a cookie with name, value, and expiration
 
- 
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// Delete a cookie
+function deleteCookie(cookieName) {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+// Check if a cookie exists and retrieve its value
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function manageCookies()
+{
+	alert("manageCookies called");
+	let fname = document.getElementById("FirstName").value;	
+	const rememberMe = document.getElementById("rememberMe").checked;
+	alert("first name is "+ fname + "  Checked value is " + rememberMe);
+	if (rememberMe) {
+			setCookie("fname", fname, 48); // Save the cookie for 48 hours
+			alert("Cookies saved");
+	} else {
+			deleteCookie("fname"); // Clear cookie if not remembered
+			alert("Cookies delete");
+	}
+	
+	const cName = getCookie("fname");
+	alert ("cookies name = " + cName);	
+} 

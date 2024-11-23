@@ -16,8 +16,9 @@ Description: Assignment 4
         <link rel="stylesheet" href="homework4.css">
     </head>
 
-    <body>
+     <!-- <body onload="displayNameOnHeader()">
          <!-- This is the  Banner section-->
+		<body>
           <div class="header"> 
               <table>         
                <tr>
@@ -25,7 +26,11 @@ Description: Assignment 4
                   <td style="width:20%"> <img src="logo.jpg" alt="MIS Medical Logo" > </td>
                   <td><h1>MIS HEALTH HOSPITAL</h1>
                      <!-- span to store dynamic date -->
-                     <span id="today">Today date holder </span> </td>
+                     <span id="today">Today date holder </span>
+					 <br><br>
+                     <span id="headerUser"> </span>					 
+				  </td>
+					 
                </tr>
               </table>            
          </div>
@@ -39,8 +44,15 @@ Description: Assignment 4
                      <tr>
                         <th colspan="2">New Patient Registration</th>
                      </tr>      
-                     </tr>      
-                     <tr>
+                      <tr>
+                        <td class="label-cell">
+                           <label for="rememberMe">Remember Me</label>                            
+                        </td>
+                        <td class="input-cell">
+							<input type="checkbox" id="rememberMe" name="rememberMe" checked>
+						</td>
+					  </tr>					 
+                      <tr>
                         <td class="label-cell">
                            <br/>
                            <label for="FirstName">First Name</label>     
@@ -58,7 +70,11 @@ Description: Assignment 4
 								 oninvalid="this.setCustomValidity('First Name not valid.')"
 								 oninput="this.setCustomValidity('')"
 								 onfocus="checkFirstName()"
-								 onblur="checkFirstName()">&ensp;<span class="errorMsg" id="firstnameError"></span>         
+								 onblur="checkFirstName()">&ensp;<span class="errorMsg" id="firstnameError"></span>   
+							<div>
+								
+								
+							</div>
                         </td>
                      </tr>
                      <tr>
@@ -463,6 +479,7 @@ Description: Assignment 4
                      <tr>        
                         <td colspan="2" class="submit-cell">
                            <br/>
+						   <button type="button" class="button" onclick="manageCookies()">TestCookies</button>
 							<button type="button" class="button" onclick="validateInput()">Validate</button>
 						   <input type="submit" value="Submit" id="btnSubmit" disabled>
                            <input type="reset"  value="Clear & Start Over">						   						   
