@@ -514,7 +514,7 @@ function displayNameOnHeader() {
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
-		console.log("cookie value not found");
+		console.log("cookie value found= " + cName);
         headerUser.innerHTML = `Welcome back, ${cName}!`;
 		txtFirstName.innerHTML = cName;
         //create dynamic checkbox
