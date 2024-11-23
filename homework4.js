@@ -583,8 +583,7 @@ function createDynamicCheckbox(firstName) {
     const mySpan = document.getElementById("dynamicSpan");
     const checkboxDiv = document.createElement("div");
     checkboxDiv.id = "dynamicCheckbox";
-    const myForm = document.getElementById("myForm"); 
-	
+    
     const label = document.createElement("label");
     label.innerHTML = `Not ${firstName}? Click here to start as a NEW USER.`;
     
@@ -594,7 +593,7 @@ function createDynamicCheckbox(firstName) {
     checkbox.addEventListener("change", () => {
         if (checkbox.checked) {			
             deleteCookie("firstName");			
-			myForm.reset();       
+			document.getElementById("myForm").reset();    
 			console.log("cookied delete & form reset");
             displayNameOnHeader();
         }
