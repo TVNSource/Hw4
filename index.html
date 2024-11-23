@@ -18,7 +18,7 @@ Description: Assignment 4
 
      <body onload="displayNameOnHeader()">
          <!-- This is the  Banner section-->
-		
+		 <form name="registrationForm" id="registrationForm" action="homework4-thankyou.html" >
           <div class="header"> 
               <table>         
                <tr>
@@ -28,7 +28,7 @@ Description: Assignment 4
                      <!-- span to store dynamic date -->
                      <span id="today">Today date holder </span>
 					 <br><br>
-                     <span id="headerUser"> </span> &ensp; 
+                     <span id="headerUser"> </span> &ensp; <span id="dynamicSpan"></span>  
 						
 				  </td>
 					 
@@ -40,8 +40,8 @@ Description: Assignment 4
          <div class="row">
             <div class="card">     
                   <!-- submit page will direct to thankyou page -->
-                  <form name="registrationForm" id="registrationForm" action="homework4-thankyou.html" >
-				  <span id="dynamicSpan"></span> 
+                 
+				
 				  
                   <table id="myForm" >
                      <tr>
@@ -491,7 +491,7 @@ Description: Assignment 4
 						 </td>
                      </tr>
                   </table>
-               </form>               
+                            
             </div>
          </div>
          	
@@ -528,6 +528,7 @@ Description: Assignment 4
 
          <!-- Load external JavaScript -->
          <script src="homework4.js"></script>     
+		</form>
     </body>
 <!-- End of file: homework4.html -->
 </html>

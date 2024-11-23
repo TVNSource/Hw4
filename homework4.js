@@ -542,8 +542,7 @@ function setCookie(cname,cvalue,exdays) {
 
 // Delete a cookie
 function deleteCookie(cookieName) {
-	console.log("in delete cookied");
-   // document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+	console.log("in delete cookied");  
     document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 	console.log("finish delte cookies");
 }
