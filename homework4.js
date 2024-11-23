@@ -516,7 +516,7 @@ function displayNameOnHeader() {
     if (cName != "") {
 		console.log("cookie value found= " + cName);
         headerUser.innerHTML = `Welcome back, ${cName}!`;
-		txtFirstName.innerHTML = cName;
+		txtFirstName.Value = cName;
         //create dynamic checkbox
 		if (!dynamicCheckbox) {
             createDynamicCheckbox(cName);
