@@ -593,7 +593,7 @@ function createDynamicCheckbox(firstName) {
     checkbox.addEventListener("change", () => {
         if (checkbox.checked) {			
             deleteCookie("firstName");			
-			document.getElementById("myForm").reset();    
+			document.getElementById("registrationForm").reset();    
 			console.log("cookied delete & form reset");
             displayNameOnHeader();
         }
