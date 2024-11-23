@@ -505,23 +505,26 @@ function showVideo() {
 }
  
  
-//display Name from cookies
+//get cookies value and display on Header and FirstName textbox
 function displayNameOnHeader() {
-		const cName = getCookie("fname");		
-	    const headerUser = document.getElementById("headerUser");
-   // const dynamicCheckbox = document.getElementById("dynamicCheckbox");
+	const cName = getCookie("fname");		
+	
+    let headerUser = document.getElementById("headerUser");
+	let txtFirstName = document.getElementById("FirstName");
+    let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
         headerUser.innerHTML = `Welcome back, ${cName}!`;
+		txtFirstName.innerHTML = cName;
         //create dynamic checkbox
-		//if (!dynamicCheckbox) {
-        //    createDynamicCheckbox(cName);
-        //}
+		if (!dynamicCheckbox) {
+            createDynamicCheckbox(cName);
+        }
     } else {
         headerUser.innerHTML = "Welcome New User!";
-        //if (dynamicCheckbox) {
-        //    dynamicCheckbox.remove();
-        //}
+        if (dynamicCheckbox) {
+            dynamicCheckbox.remove();
+        }
     }
 }
 
@@ -558,16 +561,42 @@ function getCookie(cname) {
 
 function manageCookies()
 {
-	alert("manageCookies called");
+	//alert("manageCookies called");
 	let fname = document.getElementById("FirstName").value;	
 	const rememberMe = document.getElementById("rememberMe").checked;
-	alert("first name is "+ fname + "  Checked value is " + rememberMe);
+	//alert("first name is "+ fname + "  Checked value is " + rememberMe);
 	if (rememberMe) {
 			setCookie("fname", fname, 48); // Save the cookie for 48 hours
-			alert("Cookies saved");
+			//alert("Cookies saved");
 	} else {
 			deleteCookie("fname"); // Clear cookie if not remembered
-			alert("Cookies delete");
+			//alert("Cookies delete");
 	}	
 	displayNameOnHeader();
 } 
+
+
+function createDynamicCheckbox(firstName) {
+    const mySpan = document.getElementById("dynamicSpan");
+    const checkboxDiv = document.createElement("div");
+    checkboxDiv.id = "dynamicCheckbox";
+    
+    const label = document.createElement("label");
+    label.innerHTML = `Not ${firstName}? Click here to start as a NEW USER.`;
+    
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = "newUserCheckbox";
+    checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+            deleteCookie("firstName");
+			const resetButton = document.getElementById("btnReset"); 
+			resetButton.click()            
+            displayNameOnHeader();
+        }
+    });
+    
+    checkboxDiv.appendChild(label);
+    checkboxDiv.appendChild(checkbox);
+    mySpan.appendChild(checkboxDiv);
+}

@@ -28,7 +28,8 @@ Description: Assignment 4
                      <!-- span to store dynamic date -->
                      <span id="today">Today date holder </span>
 					 <br><br>
-                     <span id="headerUser"> </span>					 
+                     <span id="headerUser"> </span> &ensp;<span id="dynamicSpan"></span>  
+						
 				  </td>
 					 
                </tr>
@@ -479,10 +480,10 @@ Description: Assignment 4
                      <tr>        
                         <td colspan="2" class="submit-cell">
                            <br/>
-						   <button type="button" class="button" onclick="manageCookies()">TestCookies</button>
+						  <!--  <button type="button" class="button" onclick="manageCookies()">TestCookies</button>-->
 							<button type="button" class="button" onclick="validateInput()">Validate</button>
 						   <input type="submit" value="Submit" id="btnSubmit" disabled>
-                           <input type="reset"  value="Clear & Start Over">						   						   
+                           <input type="reset"  id="btnReset" value="Clear & Start Over">						   						   
 						   <!-- <input type="submit" value="Review"  id="reviewBtn" onclick="reviewData()">-->
 						   <button type="button" class="button" onclick="reviewData()">Review</button>
 						 </td>
