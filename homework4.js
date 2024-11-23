@@ -512,7 +512,7 @@ function displayNameOnHeader() {
    // const dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
-        headerUser.innerHTML = `Welcome back, ${firstName}!`;
+        headerUser.innerHTML = `Welcome back, ${cName}!`;
         //create dynamic checkbox
 		//if (!dynamicCheckbox) {
         //    createDynamicCheckbox(cName);
