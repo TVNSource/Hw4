@@ -507,8 +507,7 @@ function showVideo() {
  
 //display Name from cookies
 function displayNameOnHeader() {
-		const cName = getCookie("fname");
-		alert ("cookies name is " + cName);
+		const cName = getCookie("fname");		
 	    const headerUser = document.getElementById("headerUser");
    // const dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
@@ -569,7 +568,6 @@ function manageCookies()
 	} else {
 			deleteCookie("fname"); // Clear cookie if not remembered
 			alert("Cookies delete");
-	}
-	
+	}	
 	displayNameOnHeader();
 } 
