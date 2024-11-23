@@ -508,14 +508,15 @@ function showVideo() {
 //get cookies value and display on Header and FirstName textbox
 function displayNameOnHeader() {
 	const cName = getCookie("fname");		
-	console.log("cookie value="+cname);
+	
 	let headerUser = document.getElementById("headerUser");
 	let txtFirstName = document.getElementById("FirstName");
-	console.log("txtFirstName value="+txtFirstName.value);
+	console.log("txtFirstName current value="+txtFirstName.value);
 	
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
+		console.log("cookie value not found");
         headerUser.innerHTML = `Welcome back, ${cName}!`;
 		txtFirstName.innerHTML = cName;
         //create dynamic checkbox
@@ -523,6 +524,7 @@ function displayNameOnHeader() {
             createDynamicCheckbox(cName);
         }
     } else {
+		console.log("cookie value not found");
         headerUser.innerHTML = "Welcome New User!";
         if (dynamicCheckbox) {
             dynamicCheckbox.remove();
