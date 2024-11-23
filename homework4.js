@@ -455,7 +455,7 @@ function validateInput(){
 	error_flag = 0;
 	checkFirstName();	
 	//test only 
-	//manageCookies();
+	manageCookies();
 	//end test
 	
 	checkMidName();
@@ -505,7 +505,7 @@ function showVideo() {
 }
  
  
-//display User from cookies
+//display Name from cookies
 function displayNameOnHeader() {
 		const cName = getCookie("fname");
 		alert ("cookies name is " + cName);
@@ -571,6 +571,5 @@ function manageCookies()
 			alert("Cookies delete");
 	}
 	
-	const cName = getCookie("fname");
-	alert ("cookies name = " + cName);	
+	displayNameOnHeader();
 } 
