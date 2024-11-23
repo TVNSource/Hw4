@@ -510,9 +510,7 @@ function displayNameOnHeader() {
 	const cName = getCookie("fname");		
 	
 	let headerUser = document.getElementById("headerUser");
-	let txtFirstName = document.getElementById("FirstName");
-	console.log("txtFirstName current value="+txtFirstName.value);
-	
+	let txtFirstName = document.getElementById("FirstName");	
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
@@ -581,10 +579,12 @@ function manageCookies()
 
 
 function createDynamicCheckbox(firstName) {
+	console.log("createDynamicCheckbox called");
     const mySpan = document.getElementById("dynamicSpan");
     const checkboxDiv = document.createElement("div");
     checkboxDiv.id = "dynamicCheckbox";
-    
+    const myForm = document.getElementById("myForm"); 
+	
     const label = document.createElement("label");
     label.innerHTML = `Not ${firstName}? Click here to start as a NEW USER.`;
     
@@ -593,8 +593,7 @@ function createDynamicCheckbox(firstName) {
     checkbox.id = "newUserCheckbox";
     checkbox.addEventListener("change", () => {
         if (checkbox.checked) {			
-            deleteCookie("firstName");
-			const myForm = document.getElementById("myForm"); 
+            deleteCookie("firstName");			
 			myForm.reset();       
 			console.log("cookied delete & form reset");
             displayNameOnHeader();
