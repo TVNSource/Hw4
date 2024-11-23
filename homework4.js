@@ -595,10 +595,10 @@ function createDynamicCheckbox(firstName) {
     checkbox.id = "newUserCheckbox";
     checkbox.addEventListener("change", () => {
         if (checkbox.checked) {	
-			myTest();		
+			//myTest();		
             deleteCookie("fname");			
 			document.getElementById("registrationForm").reset();    
-			console.log("cookied delete & form reset");
+			//console.log("cookied delete & form reset");
             displayNameOnHeader();
         }
     });
@@ -608,9 +608,3 @@ function createDynamicCheckbox(firstName) {
     mySpan.appendChild(checkboxDiv);
 }
 
-function myTest()
-{
-	document.getElementById("registrationForm").reset();  
-	
-	
-}
