@@ -509,15 +509,15 @@ function showVideo() {
 function displayNameOnHeader() {
 	const cName = getCookie("fname");		
 	
-	let headerUser = document.getElementById("headerUser");
-	let txtFirstName = document.getElementById("FirstName");	
+	let headerUser = document.getElementById("headerUser");		
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
 		console.log("cookie value found= " + cName);
         headerUser.innerHTML = `Welcome back, ${cName}!`;
-		txtFirstName.value = cName;
-        //create dynamic checkbox
+		document.getElementById("FirstName").value = cName;
+        
+		//create dynamic checkbox
 		if (!dynamicCheckbox) {
             createDynamicCheckbox(cName);
         }
