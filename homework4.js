@@ -508,9 +508,11 @@ function showVideo() {
 //get cookies value and display on Header and FirstName textbox
 function displayNameOnHeader() {
 	const cName = getCookie("fname");		
-	
-    let headerUser = document.getElementById("headerUser");
+	console.log("cookie value="+cname);
+	let headerUser = document.getElementById("headerUser");
 	let txtFirstName = document.getElementById("FirstName");
+	console.log("txtFirstName value="+txtFirstName.value);
+	
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
@@ -588,10 +590,11 @@ function createDynamicCheckbox(firstName) {
     checkbox.type = "checkbox";
     checkbox.id = "newUserCheckbox";
     checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
+        if (checkbox.checked) {			
             deleteCookie("firstName");
-			const resetButton = document.getElementById("btnReset"); 
-			resetButton.click()            
+			const myForm = document.getElementById("myForm"); 
+			myForm.reset();       
+			console.log("cookied delete & form reset");
             displayNameOnHeader();
         }
     });
