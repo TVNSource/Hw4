@@ -513,17 +513,17 @@ function displayNameOnHeader() {
     let dynamicCheckbox = document.getElementById("dynamicCheckbox");
     
     if (cName != "") {
-		console.log("cookie value found= " + cName);
+		//console.log("cookie value found= " + cName);
         headerUser.innerHTML = `Welcome back, ${cName}!`;
-		console.log("firstname before= " + document.getElementById("FirstName").value);
+		//console.log("firstname before= " + document.getElementById("FirstName").value);
 		document.getElementById("FirstName").value = cName;
-        console.log("firstname after= " + document.getElementById("FirstName").value);
+        //console.log("firstname after= " + document.getElementById("FirstName").value);
 		//create dynamic checkbox
 		if (!dynamicCheckbox) {
             createDynamicCheckbox(cName);
         }
     } else {
-		console.log("cookie value not found");
+		//console.log("cookie value not found");
         headerUser.innerHTML = "Welcome New User!";
         if (dynamicCheckbox) {
             dynamicCheckbox.remove();
@@ -542,9 +542,9 @@ function setCookie(cname,cvalue,exdays) {
 
 // Delete a cookie
 function deleteCookie(cookieName) {
-	console.log("in delete cookied");  
+	//console.log("in delete cookied");  
     document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-	console.log("finish delte cookies");
+	//console.log("finish delte cookies");
 }
 
 // Check if a cookie exists and retrieve its value
@@ -582,7 +582,7 @@ function manageCookies()
 
 
 function createDynamicCheckbox(firstName) {
-	console.log("createDynamicCheckbox called");
+	//console.log("createDynamicCheckbox called");
     const mySpan = document.getElementById("dynamicSpan");
     const checkboxDiv = document.createElement("div");
     checkboxDiv.id = "dynamicCheckbox";
